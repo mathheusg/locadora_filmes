@@ -1,0 +1,66 @@
+
+package alugueltest;
+
+public class Aluguel {
+    private String nome;
+    private String data;
+    private float quantidade;
+    private float preco;
+    private int dias_alug;
+    private float i;
+    
+    //Set camp
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+    public void setData(String Data){
+        this.data = data;
+    }
+    public void setQuantidade(float Quantidade){
+        this.quantidade = quantidade;
+    }
+    public void setPreco(float preco){
+        this.preco = preco;
+    }
+    //End Set camp
+    //Get camp
+    public String getNome(){
+        return nome;
+    }
+     public String getData(){
+        return data;
+    }
+    public float getQuantidade(){
+        return quantidade;
+    }
+    public float getPreco(){
+        return preco;
+    }
+    //End Get camp
+    
+    //Verificação dias de aluguel
+    public void setDiasAlug(int dias_alug){
+        this.dias_alug = dias_alug;
+    }
+    public int getDiasAlug(){
+        return dias_alug;
+    }
+    //End vf
+       
+    public float Preco() {
+        return (getQuantidade() * getPreco());
+    }
+
+    public float Tx() {
+        return (Preco() * getDiasAlug());
+    }
+
+    public float Taxa() {
+        if (getDiasAlug() > 5) {
+           i = this.Tx();
+        } else {
+           i = this.Preco();
+        }
+        return(i);
+    }   
+}
